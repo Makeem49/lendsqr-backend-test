@@ -1,0 +1,109 @@
+# GET A USER 
+GET http://localhost:3000/api/v1/users/63178592fefb7876d7a7d1d7
+Content-Type: application/json
+
+
+# GET ALL USERS 
+###
+GET http://localhost:3000/api/v1/users/?expand=true
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjI1MjU4OTcsImV4cCI6MTY2MjUyNTk5NywiYXVkIjoiNjMxN2E5MDI1OWE2ODFmNTNkYjZiNTJkIiwiaXNzIjoid3d3LkxlbmRzcXIuY29tIn0.S7XA-jsYmhEddbHyJZT1AimC5Sg5uA4orMrz6m2GDUA
+
+# GET ALL USERS URL
+###
+GET http://localhost:3000/api/v1/users/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjI1MjU4OTcsImV4cCI6MTY2MjUyNTk5NywiYXVkIjoiNjMxN2E5MDI1OWE2ODFmNTNkYjZiNTJkIiwiaXNzIjoid3d3LkxlbmRzcXIuY29tIn0.S7XA-jsYmhEddbHyJZT1AimC5Sg5uA4orMrz6m2GDUA
+
+# CREATE USER
+###
+POST http://localhost:3000/api/v1/users/
+Content-Type: application/json
+
+{
+    "orgName" : "Lendqr",
+    "userName" : "John123",
+    "password" : "password",
+    "email" : "joh1n@gmail.com",
+    "phoneNumber" : 912344556,
+    "profile" : {
+        "firstName" : "John",
+        "lastName" : "Doe",
+        "avatar" : "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/725.jpg",
+        "gender" : "Male",
+        "bvn" : "123456789",
+        "address" : "Islan, lagos state.",
+        "currency" : "NGR"
+    },
+    "accountBalance" : 123,
+    "accountNumber" : "1234566788",
+    "guarantor" : {
+        "firstName" : "Lam",
+        "lastName" : "Gold",
+        "address" : "Islan, lagos state.",
+        "gender" : "Female",
+        "phoneNumber" : 12345667888
+    },
+    "socials" : {
+        "facebook" : "www.facebook.com/lendsqr",
+        "twitter" : "www.twitter.com/lendsqr",
+        "linkedIn" : "www.linkedIl.com/lendsqr"
+    },
+    "education" : {
+        "level" : "BSC",
+        "employmentStatus" : "Freelance",
+        "duration" : "2 years",
+        "officeEmail" : "lendsqr@gmail.com",
+         "monthlyIncome" : {
+            "0" : "1234",
+            "1" : "109887",
+            "loanRepayment" : "123456789"
+        }
+    }
+}
+
+# UPDATING USER
+###
+PATCH  http://localhost:3000/api/v1/users/63178592fefb7876d7a7d1d7
+Content-Type: application/json
+
+{
+    "orgName" : "Lendqr",
+    "userName" : "John123",
+    "email" : "joh1n0@gmail.com",
+}
+
+# DELETE USERS
+###
+DELETE  http://localhost:3000/api/v1/users/63159d716b34bf81b7e12540
+
+
+# AUTHENTICATION ENDPOINT 
+
+# LOGIN
+### 
+POST http://localhost:3000/api/v1/auth/login/
+Content-Type: application/json
+
+{
+    "password" : "password",
+    "email" : "joh1n@gmail.com"
+}
+
+
+# LOGOUT 
+###
+GET http://localhost:3000/api/v1/auth/logout/
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiam9oMW5AZ21haWwuY29tIiwiaWF0IjoxNjYyNDk4MzUwLCJleHAiOjE2NjM3OTQzNTAsImF1ZCI6IjYzMTdhOTAyNTlhNjgxZjUzZGI2YjUyZCIsImlzcyI6Ind3dy5MZW5kc3FyLmNvbSJ9.dxXQkK2PGrbGK3R_qSOqVn2NcBHJT5vbbbCQzHJlWv4"
+}
+
+# REFRESH TOKEN
+###
+GET http://localhost:3000/api/v1/auth/refresh-token/
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiam9oMW5AZ21haWwuY29tIiwiaWF0IjoxNjYyNDk4MzUwLCJleHAiOjE2NjM3OTQzNTAsImF1ZCI6IjYzMTdhOTAyNTlhNjgxZjUzZGI2YjUyZCIsImlzcyI6Ind3dy5MZW5kc3FyLmNvbSJ9.dxXQkK2PGrbGK3R_qSOqVn2NcBHJT5vbbbCQzHJlWv4"
+}
+

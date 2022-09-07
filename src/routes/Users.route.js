@@ -16,4 +16,4 @@ router.patch('/:id', verifyAccessToken, UserRoute.updateUser) // user must have 
 router.delete('/:id', verifyAccessToken, UserRoute.deleteUser) // user must have accesstoken before accessing this endpoint 
 
 
-module.exports = router // 
+module.exports = router 

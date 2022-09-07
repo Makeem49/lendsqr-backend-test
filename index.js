@@ -5,7 +5,6 @@ const createError = require("http-errors")
 
 const UserRoute = require('./src/routes/Users.route')
 const AuthRoute = require('./src/routes/Auth.route')
-const {verifyAccessToken} = require("./src/helpers/jwt_helper")
 
 // express instantiation 
 const app = express();

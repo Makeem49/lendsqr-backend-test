@@ -2,7 +2,7 @@
 const express = require('express');
 const morgan = require("morgan")
 const createError = require("http-errors")
-
+require('dotenv').config()
 const UserRoute = require('./src/routes/Users.route')
 const AuthRoute = require('./src/routes/Auth.route')
 

@@ -9,7 +9,6 @@ const route = express.Router()
 
 route.post('/login', LoginRoute)
 
-
 route.get('/logout', Logout)
 
 route.get('/refresh-token', RefreshToken)

@@ -5,11 +5,11 @@ const UserRoute = require('../controllers/User.controller')
 const {verifyAccessToken} = require("../helpers/jwt_helper")
 const router = express.Router();
 
-router.get('/', UserRoute.getAllUsers) // user must have accesstoken before accessing this endpoint 
+router.get('/', UserRoute.getAllUsers) // this is an open route 
 
 router.get('/:id', verifyAccessToken, UserRoute.getOneUser) // user must have accesstoken before accessing this endpoint 
 
-router.post('/', UserRoute.createUser)
+router.post('/', UserRoute.createUser)  // create a user, this is n open route 
 
 router.patch('/:id', verifyAccessToken, UserRoute.updateUser) // user must have accesstoken before accessing this endpoint 
 

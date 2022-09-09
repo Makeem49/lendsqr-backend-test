@@ -1,17 +1,16 @@
 # GET A USER 
-GET http://localhost:3000/api/v1/users/63178592fefb7876d7a7d1d7
+GET http://localhost:3000/api/v1/users/631a6a5cb4e1411bc6095a83
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjI1MjU4OTcsImV4cCI6MTY2MjUyNTk5NywiYXVkIjoiNjMxN2E5MDI1OWE2ODFmNTNkYjZiNTJkIiwiaXNzIjoid3d3LkxlbmRzcXIuY29tIn0.S7XA-jsYmhEddbHyJZT1AimC5Sg5uA4orMrz6m2GDUA
 
 
 # GET ALL USERS 
 ###
 GET http://localhost:3000/api/v1/users/?expand=true
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjI1MjU4OTcsImV4cCI6MTY2MjUyNTk5NywiYXVkIjoiNjMxN2E5MDI1OWE2ODFmNTNkYjZiNTJkIiwiaXNzIjoid3d3LkxlbmRzcXIuY29tIn0.S7XA-jsYmhEddbHyJZT1AimC5Sg5uA4orMrz6m2GDUA
 
 # GET ALL USERS URL
 ###
 GET http://localhost:3000/api/v1/users/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjI1MjU4OTcsImV4cCI6MTY2MjUyNTk5NywiYXVkIjoiNjMxN2E5MDI1OWE2ODFmNTNkYjZiNTJkIiwiaXNzIjoid3d3LkxlbmRzcXIuY29tIn0.S7XA-jsYmhEddbHyJZT1AimC5Sg5uA4orMrz6m2GDUA
 
 # CREATE USER
 ###

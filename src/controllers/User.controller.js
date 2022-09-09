@@ -6,20 +6,22 @@ const User = require('../database/Users.model')
 
 const getAllUsers = async (req, res, next) => {
     console.log(req.query.expand)
-    try {
-        const users = await User.find({}, {__v : 0})
+
+    User.find({}, {__v : 0})
+    .then(users => {
         if (req.query.expand) {
             res.send(users).status(200)
-            return 
+            return ;
         }
         const usersRoute = users.map(data => {
             return `http://${req.hostname}${process.env.PORT}${req.baseUrl}/${data._id}`
         })
-        res.send({users : usersRoute})
-    } catch (error) {
+        res.status(200).send(usersRoute)
+        return;
+    }).catch(error => {
         next(createError.InternalServerError())
-    }
-}
+    })
+} 
 
 
 const getOneUser = async (req, res, next) => {
@@ -27,7 +29,7 @@ const getOneUser = async (req, res, next) => {
         const userId = req.params.id
         const user = await User.findById(userId, {__v : 0})
         if (!user) throw createError.NotFound()
-        res.send(user)
+        res.status(200).send(user)
     } catch (error) {
         next(createError.NotFound())
     }
@@ -45,7 +47,7 @@ const createUser = async (req, res, next) => {
         const user = new User(body)
         const data = await user.save()
         console.log(req.body)
-        res.send({"status" : "Ok", message : "User created"})
+        res.status(201).send({"status" : "Ok", message : "User created"})
     } catch (error) {
         console.log(error)
         next(error)

@@ -1,5 +1,5 @@
 const app = require("./index")
-// custom import 
+
 require('dotenv').config()
 require('./src/helpers/init_mongodb');
 
